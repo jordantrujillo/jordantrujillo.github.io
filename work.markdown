@@ -1,8 +1,10 @@
 ---
 layout: page
 title: Work Expirience
-permalink: /resume/
+permalink: /work/
 ---
+
+![work](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/work-banner.jpg "work-banner")
 
 ## **Top Skills**
 - Troubleshooting
