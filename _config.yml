@@ -30,10 +30,10 @@ url: "https://trujordan.com" # the base hostname & protocol for your site, e.g. 
 # twitter_username: jekyllrb
 github_username:  jordantrujillo
 linkedin_username: jordan-trujillo-3984b257
-footer-heading: false
-
 # Build settings
 theme: minima
+minima:
+  skin: solarized-dark
 plugins:
   - jekyll-feed
 
