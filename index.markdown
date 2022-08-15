@@ -4,6 +4,7 @@
 
 layout: home
 ---
+![networking](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/networking-banner.jpg "networking")
 
 Welcome! This is my portoflio site for people who want to know a bit more about what I do.
 

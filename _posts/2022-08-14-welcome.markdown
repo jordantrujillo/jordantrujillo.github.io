@@ -6,9 +6,7 @@ categories: goals
 ---
 
 Even though I am a busy person, I always try to strive to hit certain goals. 
-This very site was a goal of mine. 
-
-I hope to continue building upon it and creating content that useful for others within the IT field. 
+This very site was a goal of mine. I hope to continue building upon it and creating content that useful for others within the IT field. 
 I will be using this site to update my portfolio and document personal projects in the future as well. 
 
-Feel free to subscribe if that is something that is of interest to you. 
+Feel free to subscribe, if that is something that is of interest to you. 
