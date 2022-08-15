@@ -1,2 +1,2 @@
-# jordantrujillo.github.io
+# trujordan.com
 Website, Github Pages

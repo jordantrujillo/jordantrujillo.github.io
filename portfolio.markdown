@@ -1,0 +1,84 @@
+---
+layout: page
+title: Work Expirience
+permalink: /resume/
+---
+<!-- # **Work Expirience** -->
+
+## **Top Skills**
+- Troubleshooting
+- Networking
+- Automation
+- Containerization
+
+## **Certifications**
+- CCNA
+
+## **Experience**
+
+### **UpTime Sciences**
+*Full-time · 2 yrs 7 mos*
+
+### Tier 2 Automation Engineer Tier 2
+
+*Eugene, Oregon, United States*
+
+ - SolarWinds - Automation Manager, PowerShell. 
+ - Remote System Configuration Deployments. Deploying Applications and Settings via remote agent. 
+ - Selenium for Web Browser Automation. 
+ - Backup of Network Device Configurations to SharePoint using Microsoft Graph API. 
+ - Wrote a Network Device Configuration Generator using Python, Jinja2, YAML. Created multiple templates for Cisco and Juniper.
+ - SolarWinds - Automation Manager, PowerShell. - Remote System Configuration Deployments. Deploying Applications and Settings via remote agent. 
+ - Selenium for Web Browser Automation. 
+ - Backup of Network Device Configurations to SharePoint using Microsoft Graph API. 
+
+### Support Specialist
+
+*Feb 2019 - Nov 2020 · (1 yr 10 mos)*
+
+*Eugene, Oregon Area*
+
+- Network Troubleshooting and device configuration - Cisco, HP, Juniper Switches (L2 & L3), Sophos Firewalls. 
+- Automated Network Device Configuration Backups for all Clients to Sharepoint. 
+- Configured MDT Imaging Server for Win10 Deployments. 
+- Implemented Self-Healing fixes for common reoccurring issues within client environments. 
+- Automated Software deployments for clients using Powershell and Group Policy.
+
+### Independent contracter
+*May 2018 - February 2019 (10 months)*
+
+*Eugene, Oregon Area*
+
+*Contract Jobs + CCNA Student*
+
+- Northwest Christian University - Campus wide Win10 Deployment and GPO/
+Administrative tweaks.
+- Willamette Christian School - New Network Configuration and Imaged 20+
+computers and configured Smart boards.
+- New Hope Christian College - Office and Classroom Support
+
+### **New Hope Christian College**
+*7 years*
+
+### IT Specialist
+
+*July 2015 - May 2018 (2 years 11 months)*
+
+*Eugene, Oregon*
+
+- Supervised 2 work-study students in IT Support, web and graphics.
+- Server migration and network upgrades.
+- Researched, analyzed, and tested applications and system software for user
+compatibility.
+- Installed, configured, and routinely upgraded software and hardware for end-
+users.
+
+### IT Help Desk
+*June 2011 - July 2015 (4 years 2 months)*
+
+*Eugene, Oregon*
+
+- Provided technical support for staff, faculty and students.
+- Maintained all systems on campus.
+- Was self-managed for 2 years.
+- Managed all Access Points, Security Appliance, and Phone System.
