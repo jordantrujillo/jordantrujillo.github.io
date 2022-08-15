@@ -33,7 +33,7 @@ linkedin_username: jordan-trujillo-3984b257
 # Build settings
 theme: minima
 minima:
-  skin: solarized-dark
+  skin: classic
 plugins:
   - jekyll-feed
 
