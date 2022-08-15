@@ -3,7 +3,6 @@ layout: page
 title: Work Expirience
 permalink: /resume/
 ---
-<!-- # **Work Expirience** -->
 
 ## **Top Skills**
 - Troubleshooting
