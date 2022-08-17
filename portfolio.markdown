@@ -14,23 +14,21 @@ permalink: /work/
 
 ## **Certifications**
 - CCNA
+- AWS Certified Sysops Admin Associate (In Progress)
 
 ## **Experience**
 
-### **Web3 Company 2**
+### **Web3 Company**
 *Full-time · Present*
 
-* Indexing the Blockchain to a Postgres DataBase for other project use.
-* Created AWS EC2 instance with my own Containerized Blockchain archive node. 
-* Created AWS EC2 instance of Prometheus and Grafana for monitoring. 
-
-### **Web3 Company 1**
-*Full-time · 7 mos*
 - Worked with Git and Gitlab CICD. 
 - Used DJango Python Framework to create 3 different backend applications. 
 - Created 2 different chatbots in Python, as well as a registration bot for public chat groups.
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain. 
 - Containerizing applications using Docker.
+- Indexing the Blockchain to a Postgres DataBase for other project use.
+- Created AWS EC2 instance with my own Containerized Blockchain archive node. 
+- Created AWS EC2 instance of Prometheus and Grafana for monitoring. 
 
 ### **UpTime Sciences**
 *Full-time · 2 yrs 7 mos*
