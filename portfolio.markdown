@@ -19,9 +19,11 @@ permalink: /work/
 ## **Experience**
 
 ### **Web3 Startup**
+
+### Jr. DevOps Engineer / Backend Dev
 *Full-time · Present*
 
-- Worked with Git and Gitlab CICD.
+- Worked with Git and Gitlab CICD, as well as Github and Github Actions.
 - Used DJango Python Framework to create 3 different backend applications.
 - Created 2 different chatbots in Python, as well as a registration bot for public chat groups.
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain.
