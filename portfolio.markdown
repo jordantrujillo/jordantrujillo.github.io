@@ -19,9 +19,9 @@ permalink: /work/
 ## **Experience**
 
 ### **Web3 Startup**
+*Full-time · Present*
 
 ### Jr. DevOps Engineer / Backend Dev
-*Full-time · Present*
 
 - Worked with Git and Gitlab CICD, as well as Github and Github Actions.
 - Used DJango Python Framework to create 3 different backend applications.
