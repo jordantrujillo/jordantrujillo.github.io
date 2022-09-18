@@ -25,7 +25,7 @@ permalink: /work/
 
 - Worked with Git and Gitlab CICD, as well as Github and Github Actions.
 - Used DJango Python Framework to create 3 different backend applications.
-- Created 2 different chatbots in Python, as well as a registration bot for public chat groups.
+- Created 2 different chat bots in Python, as well as a registration bot for public chat groups.
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain.
 - Containerizing applications using Docker.
 - Indexing the Blockchain to a Postgres DataBase for other project use.
@@ -60,7 +60,7 @@ permalink: /work/
 - Implemented Self-Healing fixes for common reoccurring issues within client environments. 
 - Automated Software deployments for clients using Powershell and Group Policy.
 
-### Independent contracter
+### **Independent Contractor**
 *May 2018 - February 2019 (10 months)*
 
 *Eugene, Oregon Area*
