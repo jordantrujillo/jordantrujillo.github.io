@@ -35,4 +35,4 @@ WINEVDM is a compatibility layer for WIN16bit applications, it will run within 6
 
 ## Installing 32-bit Programs With 16-bit Setup Launchers
 
-Some old programs from about 1995 to 1998 were using generic 16-bit InstallShield launchers to install 32-bit programs. As you can imagine, these programs are still compatible with modern Windows, but won't install because of these generic InstallShield packages. You can simply download the 32-bit generic executable (usually named SETUP.EXE) and replace it with the 16-bit counterpart. You read more on this [here in this forum post.](https://reactos.org/forum/viewtopic.php?p=90351)
+Some old programs from about 1995 to 1998 were using generic 16-bit InstallShield launchers to install 32-bit programs. As you can imagine, these programs are still compatible with modern Windows, but won't install because of these generic InstallShield packages. You can simply download the 32-bit generic executable (usually named SETUP.EXE) and replace it with the 16-bit counterpart. You can read more [here in this forum post.](https://reactos.org/forum/viewtopic.php?p=90351)
