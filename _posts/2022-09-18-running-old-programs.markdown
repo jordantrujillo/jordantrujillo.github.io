@@ -11,9 +11,8 @@ With each iteration of Windows, more and more features are either taken out or r
 
 Here are all the ways you can run these programs without installing older versions of Windows. 
 
-```
-Disclaimer: I will avoid providing info from 32Bit versions of Windows 10 since this will soon be no longer supported, though that is an option by turning on the NTVDM Windows Feature. Most machines today run 64Bit operating systems and so I opted to not include it. I will also not be include anything that may not be legal. The WINE project for Linux, OSX, and BSD is also another one that works but not included in this since 16-bit apps require loss of security according to their documentation FAQ. 
-```
+**Disclaimer:** I will avoid providing info from 32Bit versions of Windows 10 since this will soon be no longer supported, though that is an option by turning on the NTVDM Windows Feature. Most machines today run 64Bit operating systems and so I opted to not include it. I will also not be include anything that may not be legal. The WINE project for Linux, OSX, and BSD is also another one that works but not included in this since 16-bit apps require loss of security according to their documentation FAQ. 
+
 
 # All OSs
 
