@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Running Windows Legacy Programs On a Modern OS"
-date:   2022-09-18 08:00:00 -0700
+date:   2022-09-17 08:00:00 -0700
 categories: retro
 ---
 
@@ -27,6 +27,7 @@ DOSBOX is available for all major operating systems.
 - Video Tutorial: https://www.youtube.com/watch?v=5yBr-n_ee2E
 
 # Windows
+
 ## WINEVDM
 WINEVDM is a compatibility layer for WIN16bit applications, it will run within 64Bit versions of Windows. It is an open source project and your mileage may very but so far I have been able to run programs as far back as Windows 1.0.
 - Github: https://github.com/otya128/winevdm
