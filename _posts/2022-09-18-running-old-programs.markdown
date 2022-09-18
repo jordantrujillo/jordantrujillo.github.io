@@ -18,7 +18,7 @@ Here are all the ways you can run these programs without installing older versio
 
 ## DOSBOX
 
-DOSBOX is an emulator that runs all your MSDOS software. It is easily customizable to make sure that those programs work correctly including clock speeds. Your performance will very here and will likely need to do your own research on how to get your specific program working. One problem you may have is getting the output to anywhere on your machine. It relies on you to configure mounts and mappings of specific folders which can be configured. 
+DOSBOX is an emulator that runs all your MSDOS software. It is easily customizable to make sure that those programs work correctly including clock speeds. Your performance will vary here and will likely need to do your own research on how to get your specific program working. One problem you may have is getting the output to anywhere on your machine. It relies on you to configure mounts and mappings of specific folders which can be configured. 
 
 DOSBOX is available for all major operating systems. 
 
@@ -28,5 +28,5 @@ DOSBOX is available for all major operating systems.
 # Windows
 
 ## WINEVDM
-WINEVDM is a compatibility layer for WIN16bit applications, it will run within 64Bit versions of Windows. It is an open source project and your mileage may very but so far I have been able to run programs as far back as Windows 1.0.
+WINEVDM is a compatibility layer for WIN16bit applications, it will run within 64Bit versions of Windows. It is an open source project and your mileage may vary but so far I have been able to run programs as far back as Windows 1.0.
 - Github: https://github.com/otya128/winevdm
