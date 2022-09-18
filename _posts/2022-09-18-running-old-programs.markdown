@@ -22,17 +22,17 @@ DOSBOX is an emulator that runs all your MSDOS software. It is easily customizab
 
 DOSBOX is available for all major operating systems. 
 
-- Download and install DOSBOX: https://www.dosbox.com/download.php?main=1
-- Video Tutorial: https://www.youtube.com/watch?v=5yBr-n_ee2E
+- [Download and install DOSBOX](https://www.dosbox.com/download.php?main=1)
+- [Video Tutorial](https://www.youtube.com/watch?v=5yBr-n_ee2E)
 
 # Windows
 
 ## WINEVDM
 WINEVDM is a compatibility layer for WIN16bit applications, it will run within 64Bit versions of Windows. It is an open source project and your mileage may vary but so far I have been able to run programs as far back as Windows 1.0.
-- Github: https://github.com/otya128/winevdm
+- [Github: WINEVDM](https://github.com/otya128/winevdm)
 
 # Other
 
 ## Installing 32-bit programs with 16-bit setup launcher stubs
 
-Some old programs from about 1995 to 1998 were using generic 16-bit InstallSheild launchers to install 32-bit programs. As you can imagine, these programs are still compatible with modern Windows, but won't install because of these generic installsheild packages. You can simply download the 32-bit generic executable (usually named SETUP.EXE) and replace it with the 16-bit counterpart. You read more on this here: https://reactos.org/forum/viewtopic.php?p=90351
+Some old programs from about 1995 to 1998 were using generic 16-bit InstallSheild launchers to install 32-bit programs. As you can imagine, these programs are still compatible with modern Windows, but won't install because of these generic installsheild packages. You can simply download the 32-bit generic executable (usually named SETUP.EXE) and replace it with the 16-bit counterpart. You read more on this [here in this forum post.](https://reactos.org/forum/viewtopic.php?p=90351)
