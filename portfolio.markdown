@@ -21,7 +21,7 @@ permalink: /work/
 ### **Web3 Startup**
 *Full-time · Present*
 
-### Jr. DevOps Engineer / Backend Dev
+### DevOps Engineer / Backend Developer
 
 - Worked with Git and Gitlab CICD, as well as Github and Github Actions.
 - Used DJango Python Framework to create 3 different backend applications.
@@ -31,6 +31,7 @@ permalink: /work/
 - Indexing the Blockchain to a Postgres DataBase for other project use.
 - Created AWS EC2 instance with my own Containerized Blockchain archive node.
 - Created AWS EC2 instance of Prometheus and Grafana for monitoring.
+- Resolved Networking Security issues in the cloud.
 
 ### **UpTime Sciences**
 *Full-time · 2 yrs 7 mos*
