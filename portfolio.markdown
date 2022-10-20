@@ -23,15 +23,15 @@ permalink: /work/
 
 ### DevOps Engineer / Backend Developer
 
-- Worked with Git and Gitlab CICD, as well as Github and Github Actions.
-- Used DJango Python Framework to create 3 different backend applications.
+- Worked with Git and Gitlab CICD, as well as Github Actions.
+- Used DJango Python Framework to create 5 different backend applications.
 - Created 2 different chat bots in Python, as well as a registration bot for public chat groups.
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain.
 - Containerizing applications using Docker.
 - Indexing the Blockchain to a Postgres DataBase for other project use.
 - Created AWS EC2 instance with my own Containerized Blockchain archive node.
 - Created AWS EC2 instance of Prometheus and Grafana for monitoring.
-- Resolved Networking Security issues in the cloud.
+- Created Wireguard VPN server, created a user management application for it and automated the onboarding process. 
 
 ### **UpTime Sciences**
 *Full-time · 2 yrs 7 mos*
