@@ -5,20 +5,24 @@ date:   2022-09-17 08:00:00 -0700
 categories: retro
 ---
 
-I'm going to go over ways you can run your legacy programs from MSDOS to 16-bit Windows applications. 
+I'll go over how to run legacy programs ranging from MSDOS to 16-bit Windows applications. 
 
-With each iteration of Windows, more and more features are either taken out or replaced by more modern ones. This causes many of your older legacy programs to stop working. For a time, Microsoft would continue support for these old programs by leaving libraries to run within what they would call a "compatibility layer". Now days, you will need to use third party tools to run these programs. Many businesses still rely on these legacy programs to run their business and as a result, refuse to upgrade critical machines from Windows XP or Windows 7, opening themselves up to many cyber attacks. Some IT teams will sometimes rely on containers and or virtualization to continue with support, and prevent internet access to these installations, but wouldn't it be better to run your legacy apps without having to do any of that? 
+With each new version of Windows, more features are either removed or replaced by more modern ones. As a result, many of your older legacy programs will no longer function. For a time, Microsoft would continue to support these old programs by allowing libraries to run within a "compatibility layer." To run these programs nowadays, you will need to use third-party tools. Many businesses continue to rely on legacy programs to run their operations and, as a result, refuse to upgrade critical machines from Windows XP or Windows 7, leaving them vulnerable to a variety of cyber attacks. Some IT teams will rely on containers or virtualization to continue support and prevent internet access to these installations, but wouldn't it be preferable to run your legacy apps without having to do any of that? 
 
-Here are the ways you can run these programs without installing older versions of Windows. 
+Here are some methods for running these programs without having to install older versions of Windows. 
 
-**Disclaimer:** I will avoid providing info from 32Bit versions of Windows 10 since this will soon be no longer supported, though that is an option by turning on the NTVDM Windows Feature. Most machines today run 64Bit operating systems and so I opted to not include it. I will also not be including anything that may not be legal like stolen Microsoft code. The WINE project for Linux, OSX, and BSD is also another one that works, but not included in this since 16-bit apps require modifications to the OS that will result in security holes, according to their documentation FAQ. 
+**Disclaimer:** I will avoid providing information from 32Bit versions of Windows 10 because they will soon be deprecated, though they can still be used by activating the NTVDM Windows Feature. Because most machines today run 64-bit operating systems, I chose not to include it.
+I will also not include anything that may be illegal, such as stolen Microsoft code. According to their documentation FAQ, the WINE project for Linux, OSX, and BSD also works, but it is not included in this because 16-bit apps require OS modifications that will result in security holes. 
 
 
 # All OSs
 
 ## DOSBOX
 
-DOSBOX is an emulator that runs all your MSDOS software. It is easily customizable to make sure that those programs work correctly including clock speeds. Your performance will vary here and will likely need to do your own research on how to get your specific program working. One problem you may have is getting the output to anywhere on your machine. It relies on you to configure mounts and mappings of specific folders which can be configured. 
+DOSBOX is an emulator that allows you to run all of your MSDOS software.
+It is easily customizable to ensure that those programs, including clock speeds, work properly.
+Your performance will vary here, and you will most likely need to conduct your own research to figure out how to get your specific program to work. One issue you may encounter is getting the output to appear anywhere on your machine.
+It is up to you to configure mounts and mappings of specific folders that are configurable. 
 
 DOSBOX is available for all major operating systems. 
 
@@ -28,7 +32,7 @@ DOSBOX is available for all major operating systems.
 # Windows
 
 ## WINEVDM
-WINEVDM is a compatibility layer for WIN16bit applications, it will run within 64Bit versions of Windows. It is an open source project and your mileage may vary but so far I have been able to run programs as far back as Windows 1.0.
+WINEVDM is a compatibility layer for WIN16bit applications, it will run within 64Bit versions of Windows. It is an open source project, so your mileage may vary, but I have been able to run programs dating back to Windows 1.0 so far. 
 - [Github: WINEVDM](https://github.com/otya128/winevdm)
 
 # Other
