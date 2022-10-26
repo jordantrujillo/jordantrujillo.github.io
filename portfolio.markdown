@@ -18,8 +18,8 @@ permalink: /work/
 
 ## **Experience**
 
-### **Web3 Startup**
-*Full-time · Present*
+### **PyxelChain Technology Corporation**
+*Full-time · 1 yr 2 mos*
 
 ### DevOps Engineer / Backend Developer
 
