@@ -36,7 +36,7 @@ permalink: /work/
 ### **UpTime Sciences**
 *Full-time · 2 yrs 7 mos*
 
-### Tier 2 Automation Engineer Tier 2
+### Tier 2 Automation Engineer
 
 *Eugene, Oregon, United States*
 
