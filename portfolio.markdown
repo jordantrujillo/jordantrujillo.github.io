@@ -45,8 +45,6 @@ permalink: /work/
  - Selenium for Web Browser Automation. 
  - Backup of Network Device Configurations to SharePoint using Microsoft Graph API. 
  - Wrote a Network Device Configuration Generator using Python, Jinja2, YAML. Created multiple templates for Cisco and Juniper.
- - SolarWinds - Automation Manager, PowerShell. - Remote System Configuration Deployments. Deploying Applications and Settings via remote agent. 
- - Selenium for Web Browser Automation. 
 
 ### Support Specialist
 
