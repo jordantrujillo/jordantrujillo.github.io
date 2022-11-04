@@ -12,8 +12,7 @@ With each new version of Windows, more features are either removed or replaced b
 Here are some methods for running these programs without having to install older versions of Windows. 
 
 **Disclaimer:** I will avoid providing information from 32Bit versions of Windows 10 because they will soon be deprecated, though they can still be used by activating the NTVDM Windows Feature. Because most machines today run 64-bit operating systems, I chose not to include it.
-I will also not include anything that may be illegal, such as stolen Microsoft code. According to their documentation FAQ, the WINE project for Linux, OSX, and BSD also works, but it is not included in this because 16-bit apps require OS modifications that will result in security holes. 
-
+I will also not include anything that may be illegal, such as stolen Microsoft code. The WINE project for Linux, OSX, and BSD also works, but according to their documentation FAQ, 16-bit apps require OS modifications that will result in security holes. For that reason I have also not included WINE. 
 
 # All OSs
 
