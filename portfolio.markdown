@@ -10,7 +10,7 @@ permalink: /work/
 - Earned my CCNA in 2019 and created a configuration generator for Cisco and Juniper (L2 & L3) devices in Python, reduced user error and overall time for deployments so that projects were delivered on time. 
 - Saved Uptime Sciences over $12K a year by automating network device backups to Sharepoint using Microsoft Graph.
 - Wrote Powershell scripts for Windows configuration management and quick domain wide registry changes to close security holes prior to Microsoft’s hotfix release.
-- Ensured configuration management and compliance for all EC2 instances on the cloud through AWS SSM. 
+- Implemented System for Configuration management and ensured compliance for all EC2 instances on the cloud through AWS SSM. 
 
 ## **Certifications**
 - CCNA
