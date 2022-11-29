@@ -20,7 +20,7 @@ permalink: /work/
 ### **PyxelChain Technology Corporation**
 *Full-time · 1 yr 2 mos*
 
-### DevOps Engineer / Backend Developer
+### DevOps Engineer
 
 - Worked on chat bots for better community expirience - registration bot, games bot. 
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain.
@@ -34,7 +34,7 @@ permalink: /work/
 ### **UpTime Sciences**
 *Full-time · 2 yrs 7 mos*
 
-### Tier 2 Automation Engineer
+### Automation Engineer
 
 *Eugene, Oregon, United States*
 
