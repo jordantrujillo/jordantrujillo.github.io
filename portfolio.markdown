@@ -6,15 +6,14 @@ permalink: /work/
 
 ![work](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/work-banner.jpg "work-banner")
 
-## **Top Skills**
-- Troubleshooting
-- Networking
-- Automation
-- Containerization
+## **Highlights**
+- Earned my CCNA in 2019 and created a configuration generator for Cisco and Juniper (L2 & L3) devices in Python, reduced user error and overall time for deployments so that projects were delivered on time. 
+- Saved Uptime Sciences over $12K a year by automating network device backups to Sharepoint using Microsoft Graph.
+- Wrote Powershell scripts for Windows configuration management and quick domain wide registry changes to close security holes prior to Microsoft’s hotfix release.
+- Ensured configuration management and compliance for all EC2 instances on the cloud through AWS SSM. 
 
 ## **Certifications**
 - CCNA
-- AWS Certified Sysops Admin Associate (In Progress)
 
 ## **Experience**
 
@@ -23,15 +22,14 @@ permalink: /work/
 
 ### DevOps Engineer / Backend Developer
 
-- Worked with Git and Gitlab CICD, as well as Github Actions.
-- Used DJango Python Framework to create 5 different backend applications.
-- Created 2 different chat bots in Python, as well as a registration bot for public chat groups.
+- Worked on chat bots for better community expirience - registration bot, games bot. 
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain.
-- Containerizing applications using Docker.
-- Indexing the Blockchain to a Postgres DataBase for other project use.
-- Created AWS EC2 instance with my own Containerized Blockchain archive node.
-- Created AWS EC2 instance of Prometheus and Grafana for monitoring.
-- Created Wireguard VPN server, created a user management application for it and automated the onboarding process. 
+- Created a Django project for Indexing the Ethereum Blockchain Archival data to a Postgres DB for other project use.
+- Containerized all applications using Docker; Docker-Compose for local dev environments and 
+- Created a Django project for user management for Wireguard VPN server and automated the onboarding and offboarding process for our organization.
+- Created CICD pipelines for Django, NodeJS, React projects using Gitlab CICD or Github Actions. 
+- Created Ansible playbooks for configuration management, utilized AWS SSM and tagged resources to ensure compliance on all EC2 instances.  
+
 
 ### **UpTime Sciences**
 *Full-time · 2 yrs 7 mos*
@@ -47,8 +45,6 @@ permalink: /work/
  - Wrote a Network Device Configuration Generator using Python, Jinja2, YAML. Created multiple templates for Cisco and Juniper.
 
 ### Support Specialist
-
-*Feb 2019 - Nov 2020 · (1 yr 10 mos)*
 
 *Eugene, Oregon Area*
 
@@ -81,7 +77,7 @@ computers and configured Smart boards.
 *Eugene, Oregon*
 
 - Supervised 2 work-study students in IT Support, web and graphics.
-- Server migration and network upgrades.
+- Implemented Server/network upgrades and Server migrations.
 - Researched, analyzed, and tested applications and system software for user
 compatibility.
 - Installed, configured, and routinely upgraded software and hardware for end-
@@ -93,8 +89,5 @@ users.
 *Eugene, Oregon*
 
 - Provided technical support for staff, faculty and students.
-- Maintained all systems on campus.
-- Was self-managed for 2 years.
+- Maintained all systems on campus, and was self-managed for 2 years.
 - Managed all Access Points, Security Appliance, and Phone System.
-
----
