@@ -3,6 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+![networking](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/networking-banner.jpg "networking")
 
 I've been in the information technology field for over ten years.
 I progressed from a Help Desk position to Network Engineer, Automation Engineer, and now DevOps at a Web3 startup. 
