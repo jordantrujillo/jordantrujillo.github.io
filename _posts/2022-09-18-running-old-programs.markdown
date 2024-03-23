@@ -26,7 +26,6 @@ It is up to you to configure mounts and mappings of specific folders that are co
 DOSBOX is available for all major operating systems. 
 
 - [Download and install DOSBOX](https://www.dosbox.com/download.php?main=1)
-- [Video Tutorial](https://www.youtube.com/watch?v=5yBr-n_ee2E)
 
 # Windows
 
