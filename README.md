@@ -8,7 +8,7 @@ Website, Github Pages
 
 ```
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve -l
 ```
 
 # Theme Docs
