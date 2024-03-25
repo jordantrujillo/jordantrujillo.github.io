@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Running Windows Legacy Programs On a Modern OS"
 date:   2022-09-17 08:00:00 -0700
 categories: retro

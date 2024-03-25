@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Website Goals"
 date:   2022-08-14 08:00:00 -0700
 categories: goals
