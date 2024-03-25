@@ -105,11 +105,17 @@ analytics:
 # Site Author
 author:
   name             : "Jordan Trujillo"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "DevOps Engineer, Photographer, and Musician."
-  location         : # "N/A"
+  avatar           : "/assets/images/bio-photo.jpg"
+  bio              : "DevOps Engineer, Photography hobbyist, Musician, and all around Tech Enthusiast."
+  location         : "Southern California, USA"
   email            :
   links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jordantrujillo"
+    - label: "linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jordan-trujillo/"
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
@@ -122,13 +128,7 @@ author:
     # - label: "Facebook"
     #   icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jordantrujillo"
     # - label: "Instagram"
-    - label: "linkedin"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/jordan-trujillo/"
     #   icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 

@@ -1,7 +1,15 @@
 ---
 layout: splash
+subtitle: "Welcome to my portfolio site!"
+header:
+  overlay_image: /assets/images/networking-banner.jpg
+  overlay_filter: 0.5
+  actions:
+    - label: "Learn More About Me"
+      url: "/about/"
+    - label: "Check out my Portfolio"
+      url: "/portfolio"
 ---
-![networking](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/networking-banner.jpg "networking")
 
 Welcome!
 This is my portfolio site, for those interested in learning more about what I do.

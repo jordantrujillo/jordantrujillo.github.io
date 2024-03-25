@@ -5,4 +5,8 @@ date:   2024-03-24 08:00:00 -0700
 tags: goals
 ---
 
-The old theme was the default jekyll theme. I wanted to change it to something more modern and clean. I chose the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme. I like the clean look and the ability to customize it. I'm happy with the new theme and I think it gives the blog a fresh new look.
+The old theme was the default jekyll theme. I wanted to change it to something more modern and clean. 
+
+I chose the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme. 
+
+I like the clean look, I'm happy with the new theme and I think it gives the blog a fresh new look.

@@ -3,8 +3,11 @@ layout: single
 title: About Me
 permalink: /about/
 author_profile: true
+classes: wide
+header:
+  overlay_image: /assets/images/networking-banner.jpg
+  overlay_filter: 0.5
 ---
-![networking](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/networking-banner.jpg "networking")
 
 I've been in the information technology field for over ten years.
 I progressed from a Help Desk position to Network Engineer, Automation Engineer, and now DevOps at a Web3 startup. 
