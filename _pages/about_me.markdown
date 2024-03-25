@@ -1,7 +1,12 @@
 ---
-layout: page
+layout: single
 title: About Me
 permalink: /about/
+author_profile: true
+classes: wide
+header:
+  overlay_image: /assets/images/networking-banner.jpg
+  overlay_filter: 0.5
 ---
 
 I've been in the information technology field for over ten years.

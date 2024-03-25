@@ -1,10 +1,15 @@
 ---
-layout: page
+layout: single
 title: Portfolio
-permalink: /work/
+permalink: /portfolio/
+collection: portfolio
+entries_layout: grid
+author_profile: true
+classes: wide
+header:
+  overlay_image: /assets/images/work-banner.jpg
+  overlay_filter: 0.5
 ---
-
-![work](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/work-banner.jpg "work-banner")
 
 ## **Highlights**
 - Earned my CCNA in 2019 and created a configuration generator for Cisco and Juniper (L2 & L3) devices in Python, reduced user error and overall time for deployments so that projects were delivered on time. 
