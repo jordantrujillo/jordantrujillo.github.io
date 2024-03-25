@@ -2,6 +2,7 @@
 layout: single
 title: Portfolio
 permalink: /work/
+author_profile: true
 ---
 
 ![work](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/work-banner.jpg "work-banner")

@@ -2,6 +2,7 @@
 layout: single
 title: About Me
 permalink: /about/
+author_profile: true
 ---
 ![networking](https://raw.githubusercontent.com/jordantrujillo/jordantrujillo.github.io/main/images/networking-banner.jpg "networking")
 
