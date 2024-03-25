@@ -11,6 +11,9 @@ bundle install
 bundle exec jekyll serve
 ```
 
+# Theme Docs
+[QuickStart Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+
 # Production
 
 Push to Main branch.
