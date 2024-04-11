@@ -57,6 +57,6 @@ jobs:
 
 ![alt text](../assets/images/format-commits.png)
 
-Notice the second commit in this list, "Apply Formatting Changes" and the co-author of the commit. In this example you can see that the workflow formatted the files and pushed the changes back to the repository. 
+Notice the second commit in this list, "Apply formatting changes" and the co-author of the commit. In this example you can see that the workflow formatted the files and pushed the changes back to the repository. 
 
 The action will run again on the push event but will not make any changes because the files are already formatted. You can avoid this if you only run the action on the pull_request and remove the on push event. 
