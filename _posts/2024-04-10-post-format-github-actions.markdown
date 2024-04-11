@@ -14,7 +14,7 @@ The key to having this workflow format post-merge/push is the use of `stefanzwei
 ## Example workflow:
 
 {% capture notice-3 %}
-Warning: There are some invisible characters in the workflow file. Make sure to remove them before using the workflow. Had to add them to avoid an issue with how the page renders variables surrounded by curly braces.
+Warning: There are some invisible characters in the workflow file. Make sure to remove them before using the workflow. Had to add them to avoid an issue with how the page renders variables surrounded by curly braces. They are located between the first two curly braces in each variable. You can easily see them in an IDE like VSCode.
 {% endcapture %}
 
 <div class="notice">{{ notice-3 | markdownify }}</div>
