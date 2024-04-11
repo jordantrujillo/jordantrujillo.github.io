@@ -5,7 +5,7 @@ date:   2024-04-10 17:59:47 -0700
 tags: github github-actions format python node ruff prettier
 ---
 
-I needed to format my python, markdown and yml files in a GitHub repository. I decided to use [Ruff](https://docs.astral.sh/ruff/formatter/) for python and [Prettier](https://prettier.io/) for markdown and yml files. I created a GitHub Actions workflow to format the files on every PR and push to the master branch.
+I wanted to format my python, markdown and yml files in a GitHub repository without having to do it before merge or push. I decided to use [Ruff](https://docs.astral.sh/ruff/formatter/) for python and [Prettier](https://prettier.io/) for markdown and yml files. I created a GitHub Actions workflow to format the files on every PR and push to the master branch.
 
 The workflow checks out the code, installs Ruff and Prettier, formats the files, commits the changes and pushes them back to the repository. The workflow uses a private SSH key to clone the repository and push the changes back. I created a new SSH key pair and added the private key to the repository secrets. The public key was added to the repository deploy keys. The workflow uses the private key to clone the repository and push the changes back to the repository.
 
