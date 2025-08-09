@@ -18,9 +18,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Jordan Trujillo"
 title_separator          : "-"
-subtitle                 : "DevOps Engineer & Tech Enthusiast" # site tagline that appears below site title in masthead
+subtitle                 : "Senior DevOps Engineer & Tech Enthusiast" # site tagline that appears below site title in masthead
 name                     : "Jordan Trujillo"
-description              : "DevOps Engineer, Photography hobbyist, Musician, and all around Tech Enthusiast. Explore my portfolio, blog posts about automation, and technology insights."
+description              : "Senior DevOps Engineer, Photography hobbyist, Musician, and all around Tech Enthusiast. Explore my portfolio, blog posts about automation, and technology insights."
 url                      : "https://trujordan.com" # the base hostname & protocol for your site
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "jordantrujillo/jordantrujillo.github.io" # GitHub repository to help with GitHub Pages URLs
@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "Jordan Trujillo"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "DevOps Engineer, Photography hobbyist, Musician, and all around Tech Enthusiast."
+  bio              : "Senior DevOps Engineer, Photography hobbyist, Musician, and all around Tech Enthusiast."
   location         : "Southern California, USA"
   email            :
   links:

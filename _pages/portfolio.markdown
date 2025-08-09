@@ -18,82 +18,155 @@ header:
 - Wrote Powershell scripts for Windows configuration management and quick domain wide registry changes to close security holes prior to Microsoft’s hotfix release.
 - Implemented System for Configuration management and ensured compliance for all EC2 instances on the cloud through AWS SSM. 
 
+## **Skills**
+
+### **Programming Languages**
+- Python
+- Bash/Shell Scripting
+- PowerShell
+- JavaScript/Node.js
+
+### **DevOps & Automation**
+- Docker & Containerization
+- Ansible
+- Terraform
+- CI/CD (GitHub Actions, GitLab CI)
+- Configuration Management
+- Infrastructure as Code
+
+### **Cloud & Infrastructure**
+- Amazon Web Services (AWS)
+- AWS EC2, SSM
+- Cloud Architecture
+- Network Engineering
+
+### **Monitoring & Logging**
+- Prometheus
+- Grafana
+- Loki
+- SolarWinds
+
+### **Networking & Security**
+- Cisco ASA Virtual Appliances
+- IPsec VPN
+- Cisco, HP, Juniper Switches (L2 & L3)
+- Sophos Firewalls
+- Wireguard VPN
+
+### **Databases & Frameworks**
+- PostgreSQL
+- Django
+- REST APIs
+
+### **Version Control & Collaboration**
+- Git
+- GitHub/GitLab
+- Microsoft Graph API
+
+### **Operating Systems**
+- Linux
+- Windows
+
 ## **Certifications**
-- CCNA
+- CCNA (Cisco Certified Network Associate)
 
 ## **Experience**
+
+### **Higher Logic**
+*Full-time · 2 yrs 8 mos*
+
+### Senior DevOps Engineer
+*Oct 2023 - Present · 1 yr 11 mos*
+
+*Remote*
+
+- Managed Cisco ASA virtual appliances in cloud environments, ensuring secure and reliable network operations.
+- Designed and deployed a Loki/Grafana logging docker stack to persist and analyze logs for point-to-point IPsec VPN connections for troubleshooting.
+- Implemented automated configuration management solutions to monitor and detect changes on startup and running configurations, improving compliance and troubleshooting efficiency.
+- Developed a Python-based configuration management tool to automate and standardize monitoring of AWS cloud infrastructure, defined in a yaml data structure.
+
+### DevOps Engineer II
+*Jan 2023 - Oct 2023 · 10 mos*
+
+*Remote*
+
+- Managed Cisco ASA virtual appliances in cloud environments, ensuring secure and reliable network operations.
+- Designed and deployed a Loki/Grafana logging docker stack to persist and analyze logs for point-to-point IPsec VPN connections for troubleshooting.
+- Implemented automated configuration management solutions to monitor and detect changes on startup and running configurations, improving compliance and troubleshooting efficiency.
+- Developed a Python-based configuration management tool to automate and standardize monitoring of AWS cloud infrastructure, defined in a yaml data structure.
 
 ### **PyxelChain Technology Corporation**
 *Full-time · 1 yr 2 mos*
 
 ### DevOps Engineer
+*Sep 2021 - Oct 2022 · 1 yr 2 mos*
 
-- Worked on chat bots for better community expirience - registration bot, games bot. 
+*Remote*
+
+- Worked with Git and Gitlab CICD, as well as Github Actions.
+- Used Django Python Framework to create 5 different backend applications with REST APIs.
+- Created 2 different chat bots in Python, as well as a registration bot for public chat groups.
 - Worked with Ethereum based Crypto Currencies within Python and Node.js to read and process data from the blockchain.
-- Created a Django project for Indexing the Ethereum Blockchain Archival data to a Postgres DB for other project use.
-- Containerized all applications using Docker; Docker-Compose for local dev environments and 
-- Created a Django project for user management for Wireguard VPN server and automated the onboarding and offboarding process for our organization.
-- Created CICD pipelines for Django, NodeJS, React projects using Gitlab CICD or Github Actions. 
-- Created Ansible playbooks for configuration management, utilized AWS SSM and tagged resources to ensure compliance on all EC2 instances.  
+- Containerizing applications using Docker.
+- Indexing the Blockchain to a Postgres DataBase for other project use.
+- Created AWS EC2 instance with my own Containerized Blockchain archive node.
+- Created AWS EC2 instance of Prometheus and Grafana for monitoring.
+- Created Wireguard VPN server, created a user management application for it and automated the onboarding process.  
 
 
 ### **UpTime Sciences**
-*Full-time · 2 yrs 7 mos*
+*Full-time · 2 yrs 8 mos*
 
-### Automation Engineer
+### Tier 2 Automation Engineer
+*Nov 2020 - Sep 2021 · 11 mos*
 
 *Eugene, Oregon, United States*
 
- - SolarWinds - Automation Manager, PowerShell. 
- - Remote System Configuration Deployments. Deploying Applications and Settings via remote agent. 
- - Selenium for Web Browser Automation. 
- - Backup of Network Device Configurations to SharePoint using Microsoft Graph API. 
- - Wrote a Network Device Configuration Generator using Python, Jinja2, YAML. Created multiple templates for Cisco and Juniper.
+- SolarWinds - Automation Manager, PowerShell.
+- Remote System Configuration Deployments. Deploying Applications and Settings via remote agent.
+- Selenium for Web Browser Automation.
+- Backup of Network Device Configurations to SharePoint using Microsoft Graph API.
+- Network Device Configuration Generator using Python, Jinja2, YAML. Created multiple templates for Cisco and Juniper.
 
 ### Support Specialist
+*Feb 2019 - Nov 2020 · 1 yr 10 mos*
 
 *Eugene, Oregon Area*
 
-- Network Troubleshooting and device configuration - Cisco, HP, Juniper Switches (L2 & L3), Sophos Firewalls. 
-- Automated Network Device Configuration Backups for all Clients to Sharepoint. 
-- Configured MDT Imaging Server for Win10 Deployments. 
-- Implemented Self-Healing fixes for common reoccurring issues within client environments. 
+- Network Troubleshooting and device configuration - Cisco, HP, Juniper Switches (L2 & L3), Sophos Firewalls.
+- Automated Network Device Configuration Backups for all Clients to Sharepoint.
+- Configured MDT Imaging Server for Win10 Deployments.
+- Implemented Self-Healing fixes for common reoccurring issues within client environments.
 - Automated Software deployments for clients using Powershell and Group Policy.
 
 ### **Independent Contractor**
-*May 2018 - February 2019 (10 months)*
+*May 2018 - Feb 2019 · 10 mos*
 
 *Eugene, Oregon Area*
 
 *Contract Jobs + CCNA Student*
 
-- Northwest Christian University - Campus wide Win10 Deployment and GPO/
-Administrative tweaks.
-- Willamette Christian School - New Network Configuration and Imaged 20+
-computers and configured Smart boards.
+- Northwest Christian University - Campus wide Win10 Deployment and GPO/Administrative tweaks.
+- Willamette Christian School - New Network Configuration and Imaged 20+ computers and configured Smart boards.
 - New Hope Christian College - Office and Classroom Support
 
 ### **New Hope Christian College**
-*7 years*
+*7 yrs*
+
+*Eugene, Oregon*
 
 ### IT Specialist
-
-*July 2015 - May 2018 (2 years 11 months)*
-
-*Eugene, Oregon*
+*Jul 2015 - May 2018 · 2 yrs 11 mos*
 
 - Supervised 2 work-study students in IT Support, web and graphics.
-- Implemented Server/network upgrades and Server migrations.
-- Researched, analyzed, and tested applications and system software for user
-compatibility.
-- Installed, configured, and routinely upgraded software and hardware for end-
-users.
+- Server migration and network upgrades.
+- Researched, analyzed, and tested applications and system software for user compatibility.
+- Installed, configured, and routinely upgraded software and hardware for end-users.
 
 ### IT Help Desk
-*June 2011 - July 2015 (4 years 2 months)*
-
-*Eugene, Oregon*
+*Jun 2011 - Jul 2015 · 4 yrs 2 mos*
 
 - Provided technical support for staff, faculty and students.
-- Maintained all systems on campus, and was self-managed for 2 years.
+- Maintained all systems on campus.
+- Was self-managed for 2 years.
 - Managed all Access Points, Security Appliance, and Phone System.
