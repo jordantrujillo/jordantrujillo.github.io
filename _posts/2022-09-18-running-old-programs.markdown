@@ -1,8 +1,10 @@
 ---
 layout: single
 title:  "Running Windows Legacy Programs On a Modern OS"
+description: "Complete guide to running legacy DOS and 16-bit Windows programs on modern 64-bit operating systems using DOSBOX, WINEVDM, and other compatibility solutions."
 date:   2022-09-17 08:00:00 -0700
 tags: retro windows dos 16bit legacy software emulation dosbox winevdm installshield
+excerpt: "Learn how to run legacy programs from MSDOS to 16-bit Windows applications without virtualization or older Windows installations."
 ---
 
 I'll go over how to run legacy programs ranging from MSDOS to 16-bit Windows applications. 

@@ -1,8 +1,10 @@
 ---
 layout: single
 title:  "Post Format: GitHub Actions"
+description: "Learn how to automatically format Python, Markdown, and YAML files using GitHub Actions with Ruff and Prettier. Complete workflow example with SSH deployment keys."
 date:   2024-04-10 17:59:47 -0700
-tags: github github-actions format python node ruff prettier
+tags: github github-actions format python node ruff prettier automation
+excerpt: "Automate code formatting on every PR and push using GitHub Actions, Ruff for Python, and Prettier for Markdown/YAML files."
 ---
 
 I wanted to format my python, markdown and yml files in a GitHub repository without having to do it before merge or push. I decided to use [Ruff](https://docs.astral.sh/ruff/formatter/) for python and [Prettier](https://prettier.io/) for markdown and yml files. I created a GitHub Actions workflow to format the files on every PR and push to the master branch.

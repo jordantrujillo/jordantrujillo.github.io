@@ -1,6 +1,7 @@
 ---
 layout: single
 title: About Me
+description: "Learn about Jordan Trujillo's journey from Help Desk to DevOps Engineer. Over 10 years of IT experience in network engineering, automation, and Web3 technologies."
 permalink: /about/
 author_profile: true
 classes: wide

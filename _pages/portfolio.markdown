@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Portfolio
+description: "Jordan Trujillo's professional portfolio showcasing DevOps, automation, network engineering, and Web3 projects. CCNA certified with experience in AWS, Docker, Ansible, and more."
 permalink: /portfolio/
 collection: portfolio
 entries_layout: grid
