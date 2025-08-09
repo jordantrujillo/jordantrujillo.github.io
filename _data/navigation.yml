@@ -10,3 +10,29 @@ main:
     url: /portfolio/
   - title: "Blog"
     url: /blog/
+
+# skills sidebar
+skills:
+  - title: "Core Competencies"
+    children:
+      - title: "<small><strong>Cloud Infrastructure & DevOps</strong></small>"
+      - title: "<small>• <strong>AWS</strong> (EC2, SSM, Auto Scaling, VPC)</small>"
+      - title: "<small>• <strong>Infrastructure as Code</strong> (Terraform)</small>"
+      - title: "<small>• <strong>Configuration Management</strong> (Ansible)</small>"
+      - title: "<small>• <strong>Containerization</strong> (Docker)</small>"
+      - title: "<small>• <strong>CI/CD</strong> (GitHub Actions, GitLab CI)</small>"
+      - title: "<small><br><strong>Monitoring & Observability</strong></small>"
+      - title: "<small>• <strong>Logging Stack</strong> (Loki/Grafana)</small>"
+      - title: "<small>• <strong>Metrics</strong> (Prometheus, Grafana)</small>"
+      - title: "<small>• <strong>Network Monitoring</strong> (SolarWinds)</small>"
+      - title: "<small>• Custom <strong>Python</strong> monitoring tools</small>"
+      - title: "<small><br><strong>Network Security</strong></small>"
+      - title: "<small>• <strong>Cisco ASA</strong> (cloud management)</small>"
+      - title: "<small>• <strong>VPN Technologies</strong> (IPsec, Wireguard)</small>"
+      - title: "<small>• <strong>Network Hardware</strong> (Cisco, HP, Juniper)</small>"
+      - title: "<small>• <strong>Firewall Management</strong> (Sophos)</small>"
+      - title: "<small><br><strong>Programming & Automation</strong></small>"
+      - title: "<small>• <strong>Python</strong> (REST APIs, Django)</small>"
+      - title: "<small>• <strong>Bash/Shell Scripting</strong></small>"
+      - title: "<small>• <strong>PowerShell</strong></small>"
+      - title: "<small>• <strong>JavaScript/Node.js</strong></small>"
