@@ -226,7 +226,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   function updateToggleButton(theme) {
-    // icon only via CSS ::before, no inner text needed
+    const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    toggleButton.setAttribute('aria-label', label);
+    toggleButton.setAttribute('title', label);
   }
 });
 </script>
