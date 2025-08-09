@@ -1,5 +1,224 @@
-<!-- start custom head snippets -->
+<!-- Custom Dark Mode Toggle CSS -->
+<style>
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #ffffff;
+    --card-bg: #f8f9fa;
+    --border-color: #e9ecef;
+    --link-color: #007bff;
+    --sidebar-bg: #f8f9fa;
+    --code-bg: #f8f9fa;
+  }
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+  [data-theme="dark"] {
+    /* Refined dark palette (neutral blue-gray) */
+    --bg-color: #0f1419;           /* page background */
+    --header-bg: #0b1117;          /* masthead/footer */
+    --card-bg: #11161c;            /* cards, list items */
+    --sidebar-bg: var(--bg-color); /* sidebars/nav blocks match page bg */
+    --border-color: #243041;       /* separators and borders */
 
-<!-- end custom head snippets -->
+    --text-color: #e6e8eb;         /* primary text */
+    --text-muted: #a0a6ad;         /* secondary text */
+
+    --link-color: #7bc4ff;         /* links */
+    --link-hover-color: #a8dbff;   /* link hover */
+    --accent-color: #3da9fc;       /* active accents */
+
+    --nav-hover-bg: #182231;       /* nav hover background */
+    --nav-active-bg: #1d2a3a;      /* nav active background */
+    --code-bg: #0e151b;            /* code blocks */
+  }
+
+  /* Apply theme variables - Light mode (default) keeps original colors */
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Only apply dark theme overrides when dark mode is active */
+  [data-theme="dark"] body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .masthead, 
+  [data-theme="dark"] .page__footer {
+    background-color: var(--header-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+
+  /* Top navigation (greedy-nav) */
+  [data-theme="dark"] .greedy-nav {
+    background-color: var(--header-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .visible-links a,
+  [data-theme="dark"] .masthead__menu-item a,
+  [data-theme="dark"] .site-title a {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .visible-links a:hover,
+  [data-theme="dark"] .masthead__menu-item a:hover {
+    background-color: var(--nav-hover-bg) !important;
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .visible-links a[aria-current="page"],
+  [data-theme="dark"] .masthead__menu-item a[aria-current="page"] {
+    box-shadow: inset 0 -2px 0 0 var(--accent-color);
+    background-color: var(--nav-active-bg);
+  }
+
+  [data-theme="dark"] .sidebar,
+  [data-theme="dark"] .sidebar__right,
+  [data-theme="dark"] .page__sidebar {
+    background-color: var(--sidebar-bg) !important;
+  }
+
+  [data-theme="dark"] .archive__item, 
+  [data-theme="dark"] .list__item {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+  }
+
+  [data-theme="dark"] .page__content {
+    background-color: var(--bg-color) !important;
+  }
+
+  [data-theme="dark"] .page__title, 
+  [data-theme="dark"] .archive__item-title, 
+  [data-theme="dark"] h1, 
+  [data-theme="dark"] h2, 
+  [data-theme="dark"] h3, 
+  [data-theme="dark"] h4, 
+  [data-theme="dark"] h5, 
+  [data-theme="dark"] h6 {
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] a {
+    color: var(--link-color) !important;
+  }
+
+  [data-theme="dark"] code, 
+  [data-theme="dark"] pre {
+    background-color: var(--code-bg) !important;
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .nav__list .nav__items {
+    background-color: var(--sidebar-bg) !important;
+  }
+  [data-theme="dark"] .nav__list .nav__items a {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .nav__list .nav__items a:hover {
+    background-color: var(--nav-hover-bg) !important;
+  }
+
+  [data-theme="dark"] .nav__title {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .site-title a,
+  [data-theme="dark"] .masthead__menu-item a {
+    color: var(--text-color) !important;
+  }
+
+  /* Muted text utility in dark mode */
+  [data-theme="dark"] .page__meta,
+  [data-theme="dark"] .page__lead,
+  [data-theme="dark"] .author__bio,
+  [data-theme="dark"] .archive__item-excerpt {
+    color: var(--text-muted) !important;
+  }
+
+  /* Link hover color refinement */
+  [data-theme="dark"] a:hover {
+    color: var(--link-hover-color) !important;
+  }
+
+  /* Dark mode toggle button */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .theme-toggle::before {
+    content: "🌙";
+    margin-right: 0;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  [data-theme="dark"] .theme-toggle::before {
+    content: "☀️";
+  }
+
+  /* Dark mode author profile adjustments */
+  [data-theme="dark"] .author__avatar img {
+    border: 3px solid var(--border-color) !important;
+  }
+
+  [data-theme="dark"] .author__content {
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .author__bio {
+    color: var(--text-color) !important;
+  }
+</style>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create toggle button
+  const toggleButton = document.createElement('button');
+  toggleButton.className = 'theme-toggle';
+  toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+  toggleButton.setAttribute('title', 'Toggle dark mode');
+  
+  // Add button to page
+  document.body.appendChild(toggleButton);
+  
+  // Check for saved theme preference or default to light mode
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateToggleButton(savedTheme);
+  
+  // Toggle theme on button click
+  toggleButton.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateToggleButton(newTheme);
+  });
+  
+  function updateToggleButton(theme) {
+    // icon only via CSS ::before, no inner text needed
+  }
+});
+</script>
