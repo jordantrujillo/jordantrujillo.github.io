@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+
+# Jekyll Portfolio Project Structure
+
+This is a Jekyll-based portfolio website using the Minimal Mistakes theme hosted on GitHub Pages.
+
+## Key Configuration Files
+- [_config.yml](mdc:_config.yml) - Main Jekyll configuration with site settings, author info, and theme configuration
+- [Gemfile](mdc:Gemfile) - Ruby dependencies including GitHub Pages and Minimal Mistakes theme
+- [index.markdown](mdc:index.markdown) - Homepage with splash layout and overlay image
+
+## Site Structure
+- **Content Pages**: [_pages/](mdc:_pages/) directory contains main site pages (about, portfolio, blog)
+- **Blog Posts**: [_posts/](mdc:_posts/) directory contains blog entries with date-prefixed filenames
+- **Navigation**: [_data/navigation.yml](mdc:_data/navigation.yml) defines the main site navigation menu
+- **Assets**: [assets/](mdc:assets/) contains images, CSS, and JavaScript files
+
+## Theme Integration
+- Uses Minimal Mistakes Jekyll theme (remote_theme: "mmistakes/minimal-mistakes@4.24.0")
+- Custom SCSS in [_sass/](mdc:_sass/) directory with theme overrides
+- Theme layouts available: splash, single, archive, collection, etc.
+
+## Author Profile
+- Bio photo: [assets/images/bio-photo.jpg](mdc:assets/images/bio-photo.jpg)
+- Author info configured in [_config.yml](mdc:_config.yml) under 'author' section
+- Social links for GitHub and LinkedIn configured

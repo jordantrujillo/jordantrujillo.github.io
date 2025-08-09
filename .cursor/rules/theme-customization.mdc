@@ -1,0 +1,26 @@
+---
+globs: *.scss,*.css
+---
+
+# Theme Customization Guidelines
+
+## SCSS Structure
+- Main stylesheet: [assets/css/main.scss](mdc:assets/css/main.scss)
+- Custom SCSS files in [_sass/](mdc:_sass/) directory
+- Theme files in [_sass/minimal-mistakes/](mdc:_sass/minimal-mistakes/)
+
+## Customization Approach
+- Override theme variables in custom SCSS files
+- Use [_sass/minimal-mistakes/_variables.scss](mdc:_sass/minimal-mistakes/_variables.scss) as reference
+- Add custom styles to supplement theme, not replace
+- Maintain responsive design principles
+
+## Theme Configuration
+- Skin set to "default" in [_config.yml](mdc:_config.yml)
+- Available skins: air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+- Change `minimal_mistakes_skin` in config to switch themes
+
+## Layout Customization
+- Override layouts by creating files in [_layouts/](mdc:_layouts/)
+- Customize includes by creating files in [_includes/](mdc:_includes/)
+- Maintain compatibility with theme updates

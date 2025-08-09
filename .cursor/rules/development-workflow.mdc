@@ -1,0 +1,35 @@
+---
+description: Jekyll development and deployment workflow
+---
+
+# Development Workflow
+
+## Local Development
+- Run `bundle exec jekyll serve` for local development server
+- Site builds to `_site/` directory (excluded from git)
+- Use `--livereload` flag for automatic browser refresh
+- Check [Gemfile](mdc:Gemfile) for dependencies
+
+## GitHub Pages Deployment
+- Automatic deployment on push to main branch
+- Uses `github-pages` gem for compatibility
+- Remote theme fetched from mmistakes/minimal-mistakes
+- CNAME file configures custom domain (trujordan.com)
+
+## Configuration Management
+- Main config in [_config.yml](mdc:_config.yml)
+- Navigation in [_data/navigation.yml](mdc:_data/navigation.yml)
+- UI text customizations in [_data/ui-text.yml](mdc:_data/ui-text.yml)
+- Restart Jekyll server after config changes
+
+## Content Organization
+- Blog posts in [_posts/](mdc:_posts/) with date-prefixed filenames
+- Static pages in [_pages/](mdc:_pages/)
+- Images in [assets/images/](mdc:assets/images/)
+- Keep assets organized and use descriptive filenames
+
+## SEO and Performance
+- Site configured for SEO with meta tags
+- Compressed HTML output enabled
+- Analytics disabled (can be enabled in config)
+- Sitemap automatically generated

@@ -1,0 +1,32 @@
+---
+description: Author profile and personal branding configuration
+---
+
+# Author Profile Configuration
+
+## Personal Information
+Author details configured in [_config.yml](mdc:_config.yml) under `author` section:
+- Name: Jordan Trujillo
+- Bio: "DevOps Engineer, Photography hobbyist, Musician, and all around Tech Enthusiast."
+- Location: Southern California, USA
+- Avatar: [assets/images/bio-photo.jpg](mdc:assets/images/bio-photo.jpg)
+
+## Social Links
+Configured in both author and footer sections:
+- GitHub: https://github.com/jordantrujillo
+- LinkedIn: https://www.linkedin.com/in/jordan-trujillo/
+- Uses Font Awesome icons (fab fa-fw fa-github, fab fa-fw fa-linkedin)
+
+## Professional Focus
+Based on [_pages/portfolio.markdown](mdc:_pages/portfolio.markdown):
+- DevOps Engineering experience
+- Network automation and configuration
+- Cloud infrastructure (AWS)
+- Python and PowerShell scripting
+- CCNA certification
+
+## Site Branding
+- Title: "Jordan Trujillo"
+- URL: https://trujordan.com
+- Subtitle: "Welcome to my portfolio site!"
+- Description: "Jordan Trujillo's personal website"
