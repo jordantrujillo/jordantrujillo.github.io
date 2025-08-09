@@ -1,0 +1,39 @@
+---
+globs: *.md,*.markdown
+---
+
+# Content Creation Guidelines
+
+## Blog Posts
+When creating new blog posts in [_posts/](mdc:_posts/):
+- Use filename format: `YYYY-MM-DD-title.markdown`
+- Include required front matter:
+  ```yaml
+  ---
+  layout: single
+  title: "Post Title"
+  date: YYYY-MM-DD HH:MM:SS -0700
+  tags: tag1 tag2
+  ---
+  ```
+- Posts automatically use `single` layout with author profile enabled (configured in [_config.yml](mdc:_config.yml) defaults)
+
+## Pages
+When creating pages in [_pages/](mdc:_pages/):
+- Use descriptive filenames ending in `.markdown`
+- Include permalink in front matter for custom URLs
+- Common layouts: `single`, `splash`, `archive`
+- Add to [_data/navigation.yml](mdc:_data/navigation.yml) if needed in main menu
+
+## Front Matter Standards
+- Always include `layout` (single, splash, archive, etc.)
+- Use `title` for page/post titles
+- Use `permalink` for custom URLs on pages
+- Use `header` section for overlay images and actions
+- Portfolio uses `classes: wide` for full-width layout
+
+## Image Management
+- Store images in [assets/images/](mdc:assets/images/)
+- Use descriptive filenames
+- Reference with `/assets/images/filename.jpg`
+- Banner images: networking-banner.jpg, work-banner.jpg, blog-banner.jpg
