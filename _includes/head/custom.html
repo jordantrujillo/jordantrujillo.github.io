@@ -1,5 +1,466 @@
-<!-- start custom head snippets -->
+<!-- Early theme bootstrap: set theme before first paint to avoid flash -->
+<script>
+(function() {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved ? saved : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    // Update theme-color for mobile UI
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'theme-color');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', theme === 'dark' ? '#0f1419' : '#ffffff');
+  } catch(e) {}
+})();
+</script>
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- Custom Dark Mode Toggle CSS -->
+<style>
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #ffffff;
+    --card-bg: #f8f9fa;
+    --border-color: #e9ecef;
+    --link-color: #007bff;
+    --accent-color: #007bff; /* used for emphasis like the toggle ring */
+    --sidebar-bg: #f8f9fa;
+    --code-bg: #f8f9fa;
+    --theme-transition-duration: 320ms;
+  }
 
-<!-- end custom head snippets -->
+  /* Inform the UA about intended color scheme for built-in UI */
+  html[data-theme="dark"] { color-scheme: dark; }
+  html[data-theme="light"] { color-scheme: light; }
+
+  [data-theme="dark"] {
+    /* Refined dark palette (neutral blue-gray) */
+    --bg-color: #0f1419;           /* page background */
+    --header-bg: #0b1117;          /* masthead/footer */
+    --card-bg: #11161c;            /* cards, list items */
+    --sidebar-bg: var(--bg-color); /* sidebars/nav blocks match page bg */
+    --border-color: #243041;       /* separators and borders */
+
+    --text-color: #e6e8eb;         /* primary text */
+    --text-muted: #a0a6ad;         /* secondary text */
+
+    --link-color: #7bc4ff;         /* links */
+    --link-hover-color: #a8dbff;   /* link hover */
+    --accent-color: #3da9fc;       /* active accents */
+
+    --nav-hover-bg: #182231;       /* nav hover background */
+    --nav-active-bg: #1d2a3a;      /* nav active background */
+    --code-bg: #0e151b;            /* code blocks */
+  }
+
+  /* Apply theme variables - Light mode (default) keeps original colors */
+  body {
+    transition: background-color var(--theme-transition-duration) ease,
+                color var(--theme-transition-duration) ease;
+  }
+
+  /* Only apply dark theme overrides when dark mode is active */
+  [data-theme="dark"] body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .masthead, 
+  [data-theme="dark"] .page__footer {
+    background-color: var(--header-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+
+  /* Top navigation (greedy-nav) */
+  [data-theme="dark"] .greedy-nav {
+    background-color: var(--header-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .visible-links a,
+  [data-theme="dark"] .masthead__menu-item a,
+  [data-theme="dark"] .site-title a {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .visible-links a:hover,
+  [data-theme="dark"] .masthead__menu-item a:hover {
+    background-color: var(--nav-hover-bg) !important;
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .visible-links a[aria-current="page"],
+  [data-theme="dark"] .masthead__menu-item a[aria-current="page"] {
+    box-shadow: inset 0 -2px 0 0 var(--accent-color);
+    background-color: var(--nav-active-bg);
+  }
+
+  /* Mobile hamburger menu (hidden-links) */
+  [data-theme="dark"] .greedy-nav .hidden-links {
+    background-color: var(--header-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  [data-theme="dark"] .greedy-nav .hidden-links a {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .hidden-links a:hover {
+    background-color: var(--nav-hover-bg) !important;
+    color: var(--text-color) !important;
+  }
+  /* Hidden-links caret colors in dark mode */
+  [data-theme="dark"] .greedy-nav .hidden-links::before {
+    border-color: var(--border-color) transparent !important;
+  }
+  [data-theme="dark"] .greedy-nav .hidden-links::after {
+    border-color: var(--header-bg) transparent !important;
+  }
+  /* Hamburger icon lines */
+  [data-theme="dark"] .greedy-nav__toggle,
+  [data-theme="dark"] .greedy-nav__toggle:hover,
+  [data-theme="dark"] .greedy-nav__toggle:focus {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .navicon,
+  [data-theme="dark"] .greedy-nav .navicon::before,
+  [data-theme="dark"] .greedy-nav .navicon::after {
+    background-color: var(--text-color) !important;
+  }
+
+  /* Fix white overlay from theme's hamburger toggle (::before) in dark mode */
+  [data-theme="dark"] .greedy-nav__toggle::before {
+    background-color: var(--header-bg) !important; /* was $background-color (light) */
+  }
+  [data-theme="dark"] .greedy-nav__toggle.close::before {
+    opacity: 0.9 !important; /* keep same intensity but with dark color */
+  }
+  /* Ensure hover doesn't re-tint icon lines to a lighter mix */
+  [data-theme="dark"] .greedy-nav__toggle:hover .navicon,
+  [data-theme="dark"] .greedy-nav__toggle:hover .navicon::before,
+  [data-theme="dark"] .greedy-nav__toggle:hover .navicon::after {
+    background-color: var(--text-color) !important;
+  }
+
+  /* Dim page behind the mobile menu using a non-interactive viewport overlay */
+  /* Robust overlay using a class (no :has dependency) */
+  html.nav-dim::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: 9500;
+  }
+  [data-theme="dark"] html.nav-dim::after {
+    background: rgba(8, 12, 17, 0.66);
+    backdrop-filter: saturate(90%) blur(1px);
+  }
+  /* Ensure the dropdown sits above overlay */
+  .greedy-nav .hidden-links { z-index: 10001 !important; }
+
+  [data-theme="dark"] .sidebar,
+  [data-theme="dark"] .sidebar__right,
+  [data-theme="dark"] .page__sidebar {
+    background-color: var(--sidebar-bg) !important;
+  }
+
+  [data-theme="dark"] .archive__item, 
+  [data-theme="dark"] .list__item {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+  }
+
+  [data-theme="dark"] .page__content {
+    background-color: var(--bg-color) !important;
+  }
+
+  [data-theme="dark"] .page__title, 
+  [data-theme="dark"] .archive__item-title, 
+  [data-theme="dark"] h1, 
+  [data-theme="dark"] h2, 
+  [data-theme="dark"] h3, 
+  [data-theme="dark"] h4, 
+  [data-theme="dark"] h5, 
+  [data-theme="dark"] h6 {
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] a {
+    color: var(--link-color) !important;
+  }
+
+  [data-theme="dark"] code, 
+  [data-theme="dark"] pre {
+    background-color: var(--code-bg) !important;
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .nav__list .nav__items {
+    background-color: var(--sidebar-bg) !important;
+  }
+  [data-theme="dark"] .nav__list .nav__items a {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .nav__list .nav__items a:hover {
+    background-color: var(--nav-hover-bg) !important;
+  }
+
+  [data-theme="dark"] .nav__title {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .site-title a,
+  [data-theme="dark"] .masthead__menu-item a {
+    color: var(--text-color) !important;
+  }
+
+  /* Muted text utility in dark mode */
+  [data-theme="dark"] .page__meta,
+  [data-theme="dark"] .page__lead,
+  [data-theme="dark"] .author__bio,
+  [data-theme="dark"] .archive__item-excerpt {
+    color: var(--text-muted) !important;
+  }
+
+  /* Link hover color refinement */
+  [data-theme="dark"] a:hover {
+    color: var(--link-hover-color) !important;
+  }
+
+  /* During swap, suppress per-element transitions to avoid stagger; overlay handles visual */
+  .theme-suppress body,
+  .theme-suppress .masthead,
+  .theme-suppress .page__footer,
+  .theme-suppress .sidebar,
+  .theme-suppress .sidebar__right,
+  .theme-suppress .page__sidebar,
+  .theme-suppress .page__content,
+  .theme-suppress .archive__item,
+  .theme-suppress .list__item,
+  .theme-suppress .nav__list .nav__items,
+  .theme-suppress .nav__title,
+  .theme-suppress .page__title,
+  .theme-suppress .archive__item-title,
+  .theme-suppress h1,
+  .theme-suppress h2,
+  .theme-suppress h3,
+  .theme-suppress h4,
+  .theme-suppress h5,
+  .theme-suppress h6,
+  .theme-suppress a,
+  .theme-suppress code,
+  .theme-suppress pre {
+    transition: none !important;
+  }
+
+  /* Toggle pulse animation on click */
+  .theme-toggle.pulse {
+    animation: pulse-glow 400ms ease;
+  }
+  @keyframes pulse-glow {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.35), 0 2px 8px rgba(0,0,0,0.1); }
+    60%  { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0.0), 0 4px 14px rgba(0,0,0,0.2); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.0), 0 2px 8px rgba(0,0,0,0.1); }
+  }
+
+  /* Respect reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    :root { --theme-transition-duration: 0ms; }
+    .theme-toggle { transition: none !important; }
+    .theme-toggle.pulse { animation: none !important; }
+  }
+
+  /* Full-screen overlay to mask theme transitions */
+  .theme-fade-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-color);
+    opacity: 0;
+    transition: opacity var(--theme-transition-duration) ease;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: opacity;
+  }
+  .theme-fade-overlay.show { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .theme-fade-overlay { transition: none; }
+  }
+
+  /* Dark mode toggle button - MAXIMUM SPECIFICITY */
+  html body .theme-toggle.theme-toggle.theme-toggle {
+    position: fixed !important;
+    top: auto !important;
+    right: max(20px, env(safe-area-inset-right)) !important;
+    bottom: max(20px, env(safe-area-inset-bottom)) !important;
+    z-index: 1000 !important;
+    background: #f8f9fa !important; /* force solid background, default light */
+    background-color: #f8f9fa !important; /* double-force */
+    border: 2px solid #007bff !important;
+    border-radius: 999px !important;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    color: #333 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2), 0 2px 8px rgba(0,0,0,0.1) !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background-clip: padding-box !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .theme-toggle::before {
+    content: "🌙";
+    margin-right: 0;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  [data-theme="dark"] .theme-toggle::before {
+    content: "☀️";
+  }
+
+  /* Theme-specific button treatments - force backgrounds with higher specificity */
+  html[data-theme="light"] .theme-toggle {
+    background: #eef1f5 !important; /* filled, light but not white */
+    border-color: rgba(0,123,255,0.55) !important;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.14), 0 2px 10px rgba(0,0,0,0.08);
+  }
+  /* Dark-mode specific emphasis for the toggle */
+  html[data-theme="dark"] .theme-toggle {
+    background: #17212b !important; /* darker, distinct from page */
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px rgba(61, 169, 252, 0.25), 0 2px 10px rgba(0,0,0,0.45);
+  }
+
+  /* Size tweak on small phones */
+  @media (max-width: 768px) {
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  /* Dark mode author profile adjustments */
+  [data-theme="dark"] .author__avatar img {
+    border: 3px solid var(--border-color) !important;
+  }
+
+  [data-theme="dark"] .author__content {
+    color: var(--text-color) !important;
+  }
+
+  [data-theme="dark"] .author__bio {
+    color: var(--text-color) !important;
+  }
+</style>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create toggle button
+  const toggleButton = document.createElement('button');
+  toggleButton.className = 'theme-toggle';
+  toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+  toggleButton.setAttribute('title', 'Toggle dark mode');
+  
+  // Force inline styles as backup
+  toggleButton.style.cssText = `
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 48px !important;
+    height: 48px !important;
+    background: #f8f9fa !important;
+    border: 2px solid #007bff !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    font-size: 22px !important;
+  `;
+  
+  // Add button to page
+  document.body.appendChild(toggleButton);
+
+  // No nav overlap: keep toggle in bottom-right; no dynamic top calculations needed
+  
+  // Check for saved theme preference or default to light mode
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  // Force initial theme update after button is added to DOM
+  setTimeout(() => {
+    updateToggleButton(savedTheme);
+  }, 10);
+  
+  // Create overlay element once
+  const overlay = document.createElement('div');
+  overlay.className = 'theme-fade-overlay';
+  document.body.appendChild(overlay);
+
+  // Toggle theme on button click with overlay mask + pulse
+  toggleButton.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    // Prevent staggered transitions while overlay is up
+    document.documentElement.classList.add('theme-suppress');
+    toggleButton.classList.add('pulse');
+
+    // Lock overlay color to current theme so it covers consistently during fade
+    const currentIsDark = currentTheme === 'dark';
+    overlay.style.backgroundColor = currentIsDark ? '#0f1419' : '#ffffff';
+    // Show overlay immediately at full opacity
+    overlay.classList.add('show');
+
+    // After overlay is visible, switch theme and then fade out
+    setTimeout(() => {
+      // Update theme-color meta to target theme early
+      const themeColor = newTheme === 'dark' ? '#0f1419' : '#ffffff';
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', themeColor);
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleButton(newTheme);
+
+      // Allow a tick for repaint, then fade overlay out
+      setTimeout(() => {
+        overlay.classList.remove('show');
+        document.documentElement.classList.remove('theme-suppress');
+        toggleButton.classList.remove('pulse');
+      }, 20);
+    }, 60);
+  });
+  
+  function updateToggleButton(theme) {
+    const label = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    toggleButton.setAttribute('aria-label', label);
+    toggleButton.setAttribute('title', label);
+    
+    // Force background color inline based on theme (without !important in strings)
+    if (theme === 'dark') {
+      toggleButton.style.setProperty('background', '#3da9fc', 'important');
+      toggleButton.style.setProperty('border-color', '#7bc4ff', 'important');
+      toggleButton.style.setProperty('color', '#fff', 'important');
+    } else {
+      toggleButton.style.setProperty('background', '#17212b', 'important');
+      toggleButton.style.setProperty('border-color', '#3da9fc', 'important');
+      toggleButton.style.setProperty('color', '#e6e8eb', 'important');
+    }
+  }
+});
+</script>

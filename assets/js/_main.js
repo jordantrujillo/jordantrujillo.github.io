@@ -133,4 +133,17 @@ $(function() {
       $(this).append(anchor);
     }
   });
+
+  // Nav dim overlay toggle for mobile hidden-links
+  function updateNavDim() {
+    try {
+      var $menu = $(".greedy-nav .hidden-links");
+      var isOpen = $menu.length && !$menu.hasClass("hidden");
+      document.documentElement.classList.toggle("nav-dim", !!isOpen);
+    } catch (e) {}
+  }
+  $(document).on("click", updateNavDim);
+  $(window).on("resize", updateNavDim);
+  $(document).on("keyup", function(e){ if (e.key === "Escape") { document.documentElement.classList.remove("nav-dim"); } });
+  updateNavDim();
 });
