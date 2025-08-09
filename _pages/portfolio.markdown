@@ -7,6 +7,9 @@ collection: portfolio
 entries_layout: grid
 author_profile: true
 classes: wide
+sidebar:
+  nav: "skills"
+toc: false
 header:
   overlay_image: /assets/images/work-banner.jpg
   overlay_filter: 0.5
@@ -17,55 +20,6 @@ header:
 - Saved Uptime Sciences over $12K a year by automating network device backups to Sharepoint using Microsoft Graph.
 - Wrote Powershell scripts for Windows configuration management and quick domain wide registry changes to close security holes prior to Microsoft’s hotfix release.
 - Implemented System for Configuration management and ensured compliance for all EC2 instances on the cloud through AWS SSM. 
-
-## **Skills**
-
-### **Programming Languages**
-- Python
-- Bash/Shell Scripting
-- PowerShell
-- JavaScript/Node.js
-
-### **DevOps & Automation**
-- Docker & Containerization
-- Ansible
-- Terraform
-- CI/CD (GitHub Actions, GitLab CI)
-- Configuration Management
-- Infrastructure as Code
-
-### **Cloud & Infrastructure**
-- Amazon Web Services (AWS)
-- AWS EC2, SSM
-- Cloud Architecture
-- Network Engineering
-
-### **Monitoring & Logging**
-- Prometheus
-- Grafana
-- Loki
-- SolarWinds
-
-### **Networking & Security**
-- Cisco ASA Virtual Appliances
-- IPsec VPN
-- Cisco, HP, Juniper Switches (L2 & L3)
-- Sophos Firewalls
-- Wireguard VPN
-
-### **Databases & Frameworks**
-- PostgreSQL
-- Django
-- REST APIs
-
-### **Version Control & Collaboration**
-- Git
-- GitHub/GitLab
-- Microsoft Graph API
-
-### **Operating Systems**
-- Linux
-- Windows
 
 ## **Certifications**
 - CCNA (Cisco Certified Network Associate)
