@@ -18,7 +18,7 @@ header:
 ## **Highlights**
 - Earned my CCNA in 2019 and created a configuration generator for Cisco and Juniper (L2 & L3) devices in Python, reduced user error and overall time for deployments so that projects were delivered on time. 
 - Saved Uptime Sciences over $12K a year by automating network device backups to Sharepoint using Microsoft Graph.
-- Wrote Powershell scripts for Windows configuration management and quick domain wide registry changes to close security holes prior to Microsoft’s hotfix release.
+- Wrote Powershell scripts for Windows configuration management and quick domain wide registry changes to close security holes prior to Microsoft's hotfix release.
 - Implemented System for Configuration management and ensured compliance for all EC2 instances on the cloud through AWS SSM. 
 
 ## **Certifications**
@@ -38,6 +38,7 @@ header:
 - Designed and deployed a Loki/Grafana logging docker stack to persist and analyze logs for point-to-point IPsec VPN connections for troubleshooting.
 - Implemented automated configuration management solutions to monitor and detect changes on startup and running configurations, improving compliance and troubleshooting efficiency.
 - Developed a Python-based configuration management tool to automate and standardize monitoring of AWS cloud infrastructure, defined in a yaml data structure.
+- Researched, tested, and implemented self-hosted overlay VPN solution NetBird with SSO, with scripting to sync groups, roles, and policies.
 
 ### DevOps Engineer II
 *Jan 2023 - Oct 2023 · 10 mos*
