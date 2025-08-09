@@ -1,5 +1,7 @@
 ---
 layout: splash
+title: "Jordan Trujillo - DevOps Engineer & Tech Enthusiast"
+description: "Welcome to Jordan Trujillo's portfolio website. Explore my work as a DevOps Engineer, read my tech blog, and discover my passion for automation and technology."
 subtitle: "Welcome to my portfolio site!"
 header:
   overlay_image: /assets/images/networking-banner.jpg

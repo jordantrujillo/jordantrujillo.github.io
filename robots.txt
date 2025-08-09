@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trujordan.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /_sass/
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_data/
+Disallow: /assets/js/plugins/
+Disallow: /assets/js/_main.js

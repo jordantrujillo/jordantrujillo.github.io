@@ -1,8 +1,10 @@
 ---
 layout: single
 title:  "New Theme"
+description: "Jordan Trujillo switches from default Jekyll theme to Minimal Mistakes for a modern, clean blog design. Learn about the migration and design choices."
 date:   2024-03-24 08:00:00 -0700
-tags: goals
+tags: jekyll design theme website minimal-mistakes
+excerpt: "I switched to the Minimal Mistakes theme for a modern, clean look that gives the blog a fresh new appearance."
 ---
 
 The old theme was the default jekyll theme. I wanted to change it to something more modern and clean. 
