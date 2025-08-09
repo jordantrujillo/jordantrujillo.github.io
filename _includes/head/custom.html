@@ -95,6 +95,69 @@
     background-color: var(--nav-active-bg);
   }
 
+  /* Mobile hamburger menu (hidden-links) */
+  [data-theme="dark"] .greedy-nav .hidden-links {
+    background-color: var(--header-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  [data-theme="dark"] .greedy-nav .hidden-links a {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .hidden-links a:hover {
+    background-color: var(--nav-hover-bg) !important;
+    color: var(--text-color) !important;
+  }
+  /* Hidden-links caret colors in dark mode */
+  [data-theme="dark"] .greedy-nav .hidden-links::before {
+    border-color: var(--border-color) transparent !important;
+  }
+  [data-theme="dark"] .greedy-nav .hidden-links::after {
+    border-color: var(--header-bg) transparent !important;
+  }
+  /* Hamburger icon lines */
+  [data-theme="dark"] .greedy-nav__toggle,
+  [data-theme="dark"] .greedy-nav__toggle:hover,
+  [data-theme="dark"] .greedy-nav__toggle:focus {
+    color: var(--text-color) !important;
+  }
+  [data-theme="dark"] .greedy-nav .navicon,
+  [data-theme="dark"] .greedy-nav .navicon::before,
+  [data-theme="dark"] .greedy-nav .navicon::after {
+    background-color: var(--text-color) !important;
+  }
+
+  /* Fix white overlay from theme's hamburger toggle (::before) in dark mode */
+  [data-theme="dark"] .greedy-nav__toggle::before {
+    background-color: var(--header-bg) !important; /* was $background-color (light) */
+  }
+  [data-theme="dark"] .greedy-nav__toggle.close::before {
+    opacity: 0.9 !important; /* keep same intensity but with dark color */
+  }
+  /* Ensure hover doesn't re-tint icon lines to a lighter mix */
+  [data-theme="dark"] .greedy-nav__toggle:hover .navicon,
+  [data-theme="dark"] .greedy-nav__toggle:hover .navicon::before,
+  [data-theme="dark"] .greedy-nav__toggle:hover .navicon::after {
+    background-color: var(--text-color) !important;
+  }
+
+  /* Dim page behind the mobile menu using a non-interactive viewport overlay */
+  /* Robust overlay using a class (no :has dependency) */
+  html.nav-dim::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: 9500;
+  }
+  [data-theme="dark"] html.nav-dim::after {
+    background: rgba(8, 12, 17, 0.66);
+    backdrop-filter: saturate(90%) blur(1px);
+  }
+  /* Ensure the dropdown sits above overlay */
+  .greedy-nav .hidden-links { z-index: 10001 !important; }
+
   [data-theme="dark"] .sidebar,
   [data-theme="dark"] .sidebar__right,
   [data-theme="dark"] .page__sidebar {
