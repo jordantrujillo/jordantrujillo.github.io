@@ -1,3 +1,22 @@
+<!-- Early theme bootstrap: set theme before first paint to avoid flash -->
+<script>
+(function() {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved ? saved : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    // Update theme-color for mobile UI
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'theme-color');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', theme === 'dark' ? '#0f1419' : '#ffffff');
+  } catch(e) {}
+})();
+</script>
+
 <!-- Custom Dark Mode Toggle CSS -->
 <style>
   :root {
@@ -10,7 +29,12 @@
     --accent-color: #007bff; /* used for emphasis like the toggle ring */
     --sidebar-bg: #f8f9fa;
     --code-bg: #f8f9fa;
+    --theme-transition-duration: 320ms;
   }
+
+  /* Inform the UA about intended color scheme for built-in UI */
+  html[data-theme="dark"] { color-scheme: dark; }
+  html[data-theme="light"] { color-scheme: light; }
 
   [data-theme="dark"] {
     /* Refined dark palette (neutral blue-gray) */
@@ -34,7 +58,8 @@
 
   /* Apply theme variables - Light mode (default) keeps original colors */
   body {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--theme-transition-duration) ease,
+                color var(--theme-transition-duration) ease;
   }
 
   /* Only apply dark theme overrides when dark mode is active */
@@ -140,11 +165,71 @@
     color: var(--link-hover-color) !important;
   }
 
+  /* During swap, suppress per-element transitions to avoid stagger; overlay handles visual */
+  .theme-suppress body,
+  .theme-suppress .masthead,
+  .theme-suppress .page__footer,
+  .theme-suppress .sidebar,
+  .theme-suppress .sidebar__right,
+  .theme-suppress .page__sidebar,
+  .theme-suppress .page__content,
+  .theme-suppress .archive__item,
+  .theme-suppress .list__item,
+  .theme-suppress .nav__list .nav__items,
+  .theme-suppress .nav__title,
+  .theme-suppress .page__title,
+  .theme-suppress .archive__item-title,
+  .theme-suppress h1,
+  .theme-suppress h2,
+  .theme-suppress h3,
+  .theme-suppress h4,
+  .theme-suppress h5,
+  .theme-suppress h6,
+  .theme-suppress a,
+  .theme-suppress code,
+  .theme-suppress pre {
+    transition: none !important;
+  }
+
+  /* Toggle pulse animation on click */
+  .theme-toggle.pulse {
+    animation: pulse-glow 400ms ease;
+  }
+  @keyframes pulse-glow {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.35), 0 2px 8px rgba(0,0,0,0.1); }
+    60%  { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0.0), 0 4px 14px rgba(0,0,0,0.2); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.0), 0 2px 8px rgba(0,0,0,0.1); }
+  }
+
+  /* Respect reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    :root { --theme-transition-duration: 0ms; }
+    .theme-toggle { transition: none !important; }
+    .theme-toggle.pulse { animation: none !important; }
+  }
+
+  /* Full-screen overlay to mask theme transitions */
+  .theme-fade-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-color);
+    opacity: 0;
+    transition: opacity var(--theme-transition-duration) ease;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: opacity;
+  }
+  .theme-fade-overlay.show { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .theme-fade-overlay { transition: none; }
+  }
+
   /* Dark mode toggle button */
   .theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: auto;
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
     z-index: 1000;
     background: var(--card-bg);
     border: 2px solid var(--accent-color);
@@ -184,6 +269,14 @@
     box-shadow: 0 0 0 3px rgba(61, 169, 252, 0.25), 0 2px 10px rgba(0,0,0,0.4);
   }
 
+  /* Size tweak on small phones */
+  @media (max-width: 768px) {
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
   /* Dark mode author profile adjustments */
   [data-theme="dark"] .author__avatar img {
     border: 3px solid var(--border-color) !important;
@@ -209,20 +302,52 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add button to page
   document.body.appendChild(toggleButton);
+
+  // No nav overlap: keep toggle in bottom-right; no dynamic top calculations needed
   
   // Check for saved theme preference or default to light mode
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateToggleButton(savedTheme);
   
-  // Toggle theme on button click
+  // Create overlay element once
+  const overlay = document.createElement('div');
+  overlay.className = 'theme-fade-overlay';
+  document.body.appendChild(overlay);
+
+  // Toggle theme on button click with overlay mask + pulse
   toggleButton.addEventListener('click', function() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateToggleButton(newTheme);
+
+    // Prevent staggered transitions while overlay is up
+    document.documentElement.classList.add('theme-suppress');
+    toggleButton.classList.add('pulse');
+
+    // Lock overlay color to current theme so it covers consistently during fade
+    const currentIsDark = currentTheme === 'dark';
+    overlay.style.backgroundColor = currentIsDark ? '#0f1419' : '#ffffff';
+    // Show overlay immediately at full opacity
+    overlay.classList.add('show');
+
+    // After overlay is visible, switch theme and then fade out
+    setTimeout(() => {
+      // Update theme-color meta to target theme early
+      const themeColor = newTheme === 'dark' ? '#0f1419' : '#ffffff';
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', themeColor);
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleButton(newTheme);
+
+      // Allow a tick for repaint, then fade overlay out
+      setTimeout(() => {
+        overlay.classList.remove('show');
+        document.documentElement.classList.remove('theme-suppress');
+        toggleButton.classList.remove('pulse');
+      }, 20);
+    }, 60);
   });
   
   function updateToggleButton(theme) {
