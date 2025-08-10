@@ -548,6 +548,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add button to body - completely separate from navigation
   document.body.appendChild(toggleButton);
 
+  // Make toggle transparent when scrolled down from top
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (currentScroll > 50) {
+      // Scrolled down from top - make transparent
+      toggleButton.style.opacity = '0.3';
+      toggleButton.style.transition = 'opacity 0.3s ease';
+    } else {
+      // At or near top - full opacity
+      toggleButton.style.opacity = '1';
+      toggleButton.style.transition = 'opacity 0.3s ease';
+    }
+  });
+
   // No nav overlap: keep toggle in bottom-right; no dynamic top calculations needed
   
   // Check for saved theme mode or default to auto
