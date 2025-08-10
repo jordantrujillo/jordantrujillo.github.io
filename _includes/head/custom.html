@@ -396,6 +396,14 @@
     right: 22px !important;
   }
 
+  /* Hide toggle on mobile - high specificity */
+  @media (max-width: 600px) {
+    html body .theme-toggle.theme-toggle.theme-toggle {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+  }
 
 
   .theme-toggle:hover {
