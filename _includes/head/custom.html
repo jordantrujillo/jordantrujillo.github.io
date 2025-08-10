@@ -300,26 +300,37 @@
     .theme-fade-overlay { transition: none; }
   }
 
-  /* Sleek three-state theme toggle bar - integrated into nav */
+  /* Horizontal theme toggle container */
   html body .theme-toggle.theme-toggle.theme-toggle {
     position: static !important;
-    background: var(--card-bg) !important;
-    border: 2px solid var(--border-color) !important;
-    border-radius: 24px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
     width: 120px !important;
-    height: 40px !important;
-    padding: 3px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
+    height: 50px !important;
+    padding: 0 !important;
+    display: block !important;
     cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    transition: all 0.2s ease !important;
     appearance: none !important;
     -webkit-appearance: none !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     position: relative !important;
     margin-left: 1rem !important;
+  }
+
+  /* Toggle track area - horizontal with rounded corners */
+  .theme-toggle::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 15px !important;
+    left: 25px !important;
+    width: 70px !important;
+    height: 18px !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    z-index: 0 !important;
   }
 
   /* Position theme toggle in navigation */
@@ -336,44 +347,58 @@
     pointer-events: none !important;
   }
 
-  /* Sliding indicator background */
+  /* Circular sliding indicator - moves horizontally within track */
   .theme-toggle::before {
     content: "" !important;
     position: absolute !important;
-    top: 3px !important;
-    left: 3px !important;
-    width: 30px !important;
-    height: 30px !important;
+    width: 12px !important;
+    height: 12px !important;
     background: var(--accent-color) !important;
-    border-radius: 15px !important;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
     z-index: 1 !important;
+    top: 18px !important;
   }
 
-  /* Position indicator based on selected mode */
+  /* Position circular indicator based on selected mode */
   .theme-toggle[data-mode="light"]::before {
-    transform: translateX(0) !important;
+    left: 28px !important;
   }
   .theme-toggle[data-mode="auto"]::before {
-    transform: translateX(36px) !important;
+    left: 54px !important;
   }
   .theme-toggle[data-mode="dark"]::before {
-    transform: translateX(72px) !important;
+    left: 80px !important;
   }
 
-  /* Theme option containers */
+  /* Labels positioned around the toggle track */
   .theme-option {
-    width: 30px !important;
-    height: 30px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 16px !important;
+    position: absolute !important;
+    font-size: 10px !important;
     line-height: 1 !important;
-    position: relative !important;
     z-index: 2 !important;
-    transition: color 0.3s ease !important;
-    border-radius: 50% !important;
+    transition: opacity 0.2s ease !important;
+    color: var(--text-color) !important;
+    font-weight: 500 !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    pointer-events: none !important;
+  }
+
+  /* Position labels - Light and Dark above, Auto below center */
+  .theme-option[data-theme-mode="light"] {
+    top: 2px !important;
+    left: 22px !important;
+  }
+  .theme-option[data-theme-mode="auto"] {
+    bottom: 4px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .theme-option[data-theme-mode="dark"] {
+    top: 2px !important;
+    right: 22px !important;
   }
 
   /* Hide toggle in mobile hamburger menu, show as separate nav item */
@@ -393,44 +418,41 @@
   }
 
   .theme-toggle:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+    border-color: var(--accent-color) !important;
+    background: rgba(var(--accent-color), 0.05) !important;
+  }
+
+  /* Remove focus outline */
+  .theme-toggle:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
 
   /* Dark mode styling for toggle bar */
   [data-theme="dark"] .theme-toggle {
-    background: var(--header-bg) !important;
+    background: transparent !important;
     border-color: var(--border-color) !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3) !important;
   }
 
-  /* Compact toggle for navigation integration */
-  @media (min-width: 768px) {
-    html body .theme-toggle.theme-toggle.theme-toggle {
-      width: 108px !important;
-      height: 36px !important;
-      padding: 3px !important;
-      margin-left: 1.5rem !important;
-    }
-    .theme-toggle::before {
-      width: 27px !important;
-      height: 27px !important;
-      top: 3px !important;
-      left: 3px !important;
-      border-radius: 13.5px !important;
-    }
-    .theme-toggle[data-mode="auto"]::before {
-      transform: translateX(35px) !important;
-    }
-    .theme-toggle[data-mode="dark"]::before {
-      transform: translateX(71px) !important;
-    }
-    .theme-option {
-      width: 27px !important;
-      height: 27px !important;
-      font-size: 14px !important;
-    }
+  /* Selected option styling */
+  .theme-toggle[data-mode="light"] .theme-option[data-theme-mode="light"],
+  .theme-toggle[data-mode="auto"] .theme-option[data-theme-mode="auto"],
+  .theme-toggle[data-mode="dark"] .theme-option[data-theme-mode="dark"] {
+    color: var(--accent-color) !important;
+    font-weight: 600 !important;
   }
+
+  /* Unselected options are more subtle */
+  .theme-option {
+    opacity: 0.5 !important;
+  }
+  .theme-toggle[data-mode="light"] .theme-option[data-theme-mode="light"],
+  .theme-toggle[data-mode="auto"] .theme-option[data-theme-mode="auto"],
+  .theme-toggle[data-mode="dark"] .theme-option[data-theme-mode="dark"] {
+    opacity: 1 !important;
+  }
+
+
 
   /* Dark mode author profile adjustments */
   [data-theme="dark"] .author__avatar img {
@@ -516,17 +538,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // Create the three theme options
   const lightOption = document.createElement('div');
   lightOption.className = 'theme-option';
-  lightOption.innerHTML = '☀️';
+  lightOption.innerHTML = 'Light';
   lightOption.setAttribute('data-theme-mode', 'light');
   
   const autoOption = document.createElement('div');
   autoOption.className = 'theme-option';
-  autoOption.innerHTML = '🌗';
+  autoOption.innerHTML = 'Auto';
   autoOption.setAttribute('data-theme-mode', 'auto');
   
   const darkOption = document.createElement('div');
   darkOption.className = 'theme-option';
-  darkOption.innerHTML = '🌙';
+  darkOption.innerHTML = 'Dark';
   darkOption.setAttribute('data-theme-mode', 'dark');
   
   // Add options to toggle button
@@ -588,6 +610,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     return mode;
   }
+
+  // Debug function - open browser console and type: testAutoMode(15) to test 3PM
+  window.testAutoMode = function(testHour) {
+    const savedDate = Date;
+    Date = function() {
+      const d = new savedDate();
+      d.getHours = () => testHour;
+      return d;
+    };
+    Date.prototype = savedDate.prototype;
+    
+    const newTheme = getCurrentTheme('auto');
+    console.log(`Testing hour ${testHour}: theme should be ${newTheme}`);
+    
+    if (localStorage.getItem('theme-mode') === 'auto') {
+      document.documentElement.setAttribute('data-theme', newTheme);
+      updateToggleButton('auto', newTheme);
+    }
+    
+    // Restore original Date
+    setTimeout(() => { Date = savedDate; }, 100);
+  };
   
   // Create overlay element once
   const overlay = document.createElement('div');
