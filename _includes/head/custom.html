@@ -5,14 +5,8 @@
     var saved = localStorage.getItem('theme-mode') || 'auto';
     var actualTheme;
     
-    function getTimeBasedTheme() {
-      var hour = new Date().getHours();
-      // Dark mode from 7 PM (19:00) to 7 AM (07:00)
-      return (hour >= 19 || hour < 7) ? 'dark' : 'light';
-    }
-    
     if (saved === 'auto') {
-      actualTheme = getTimeBasedTheme();
+      actualTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     } else {
       actualTheme = saved;
     }
@@ -300,9 +294,11 @@
     .theme-fade-overlay { transition: none; }
   }
 
-  /* Horizontal theme toggle container */
+  /* Theme toggle positioned at bottom-right */
   html body .theme-toggle.theme-toggle.theme-toggle {
-    position: static !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
@@ -315,8 +311,7 @@
     appearance: none !important;
     -webkit-appearance: none !important;
     overflow: visible !important;
-    position: relative !important;
-    margin-left: 1rem !important;
+    z-index: 1000 !important;
   }
 
   /* Toggle track area - horizontal with rounded corners */
@@ -401,21 +396,7 @@
     right: 22px !important;
   }
 
-  /* Hide toggle in mobile hamburger menu, show as separate nav item */
-  @media (max-width: 767px) {
-    .theme-toggle {
-      display: none !important;
-    }
-    .mobile-theme-toggle {
-      display: block !important;
-    }
-  }
 
-  @media (min-width: 768px) {
-    .mobile-theme-toggle {
-      display: none !important;
-    }
-  }
 
   .theme-toggle:hover {
     border-color: var(--accent-color) !important;
@@ -556,19 +537,8 @@ document.addEventListener('DOMContentLoaded', function() {
   toggleButton.appendChild(autoOption);
   toggleButton.appendChild(darkOption);
   
-  // Add button to navigation (wait for nav to be available)
-  function addToNavigation() {
-    const visibleLinks = document.querySelector('.greedy-nav .visible-links');
-    if (visibleLinks) {
-      visibleLinks.appendChild(toggleButton);
-    } else {
-      // Fallback: try again after a short delay
-      setTimeout(addToNavigation, 100);
-    }
-  }
-  
-  // Try to add immediately, or wait for DOM
-  addToNavigation();
+  // Add button to body - completely separate from navigation
+  document.body.appendChild(toggleButton);
 
   // No nav overlap: keep toggle in bottom-right; no dynamic top calculations needed
   
@@ -582,15 +552,13 @@ document.addEventListener('DOMContentLoaded', function() {
     updateToggleButton(savedMode, currentTheme);
   }, 10);
   
-  // Auto mode: check for theme changes every minute when in auto mode
-  setInterval(() => {
-    const currentMode = localStorage.getItem('theme-mode') || 'auto';
-    if (currentMode === 'auto') {
-      const newTheme = getCurrentTheme('auto');
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      
-      if (newTheme !== currentTheme) {
-        // Theme should change based on time
+  // Auto mode: listen for system preference changes
+  if (window.matchMedia) {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addListener(() => {
+      const currentMode = localStorage.getItem('theme-mode') || 'auto';
+      if (currentMode === 'auto') {
+        const newTheme = getCurrentTheme('auto');
         document.documentElement.setAttribute('data-theme', newTheme);
         updateToggleButton(currentMode, newTheme);
         
@@ -598,15 +566,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const meta = document.querySelector('meta[name="theme-color"]');
         if (meta) meta.setAttribute('content', newTheme === 'dark' ? '#0f1419' : '#ffffff');
       }
-    }
-  }, 60000); // Check every minute
+    });
+  }
   
   // Helper function to determine actual theme from mode
   function getCurrentTheme(mode) {
     if (mode === 'auto') {
-      const hour = new Date().getHours();
-      // Dark mode from 7 PM (19:00) to 7 AM (07:00)
-      return (hour >= 19 || hour < 7) ? 'dark' : 'light';
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     return mode;
   }
@@ -695,10 +661,8 @@ document.addEventListener('DOMContentLoaded', function() {
       label = 'Light mode active';
       title = 'Light mode (click to switch to auto)';
     } else if (mode === 'auto') {
-      const hour = new Date().getHours();
-      const timeStr = hour < 12 ? `${hour === 0 ? 12 : hour}AM` : `${hour === 12 ? 12 : hour - 12}PM`;
       label = 'Auto mode active';
-      title = `Auto mode (${timeStr}, ${actualTheme} theme) - Light: 7AM-7PM, Dark: 7PM-7AM`;
+      title = `Auto mode (system: ${actualTheme}) - Follows your device's appearance setting`;
     } else {
       label = 'Dark mode active';
       title = 'Dark mode (click to switch to light)';
